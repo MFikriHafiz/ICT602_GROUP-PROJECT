@@ -145,7 +145,7 @@ public class MedicationHistoryActivity extends AppCompatActivity implements
 
     @Override
     public void onItemClick(Medication medication) {
-        // TODO: Implement what happens when a history item is clicked.
+
         // For example, navigate to a detail view (read-only AddEditMedicationActivity or new DetailActivity)
         Toast.makeText(this, "Clicked: " + medication.getName() + " (ID: " + medication.getId() + ")", Toast.LENGTH_SHORT).show();
         // Example: Intent to MedicationDetailActivity (you'd need to create this)
