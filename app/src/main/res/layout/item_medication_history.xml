@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/default_margin_small"
+    android:layout_marginBottom="@dimen/default_margin_small"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/default_padding">
+
+        <ImageView
+            android:id="@+id/imageViewHistoryMedicationPhoto"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_medication_placeholder"
+            android:layout_marginEnd="@dimen/default_margin_small"
+            tools:src="@drawable/ic_medication_placeholder"
+            android:contentDescription="Medication photo" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewHistoryMedicationName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                tools:text="Panadol" />
+
+            <TextView
+                android:id="@+id/textViewHistoryDosageFrequency"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@android:color/darker_gray"
+                android:layout_marginTop="2dp"
+                tools:text="500mg, 4x Times A Day" />
+
+            <TextView
+                android:id="@+id/textViewHistoryInstructions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@android:color/darker_gray"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:layout_marginTop="2dp"
+                tools:text="After food, take with plenty of water. Do not exceed recommended dose. Consult doctor if symptoms persist." />
+
+            <TextView
+                android:id="@+id/textViewHistoryDates"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="4dp"
+                tools:text="Taken from: 01/01/2023 to 31/12/2023" />
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/buttonHistoryDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:src="@drawable/ic_delete_forever"
+            android:contentDescription="Delete medication from history"
+            tools:src="@drawable/ic_delete_forever" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

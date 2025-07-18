@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_home_fragment"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+    <item
+        android:id="@+id/navigation_map_fragment"
+        android:icon="@drawable/ic_map"
+        android:title="Map" />
+    <item
+        android:id="@+id/emergencyContactsFragment"
+        android:icon="@drawable/ic_emergency_contact"
+        android:title="Emergency Contacts" />
+    <item
+        android:id="@+id/navigation_user_profile_fragment"
+        android:icon="@drawable/ic_profile"
+        android:title="Profile" />
+
+
+</menu>

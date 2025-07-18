@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".AddEditMedicationActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/addEditTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add New Medication"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary"
+            android:layout_marginBottom="24dp"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Medication Photo Section -->
+        <ImageView
+            android:id="@+id/imageViewMedicationPhoto"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:scaleType="centerCrop"
+            android:background="@android:color/darker_gray"
+            android:src="@drawable/ic_image_placeholder"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:contentDescription="Medication photo" />
+
+        <Button
+            android:id="@+id/buttonSelectPhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:text="Add/Change Photo"/>
+
+        <!-- Medication Name -->
+        <EditText
+            android:id="@+id/editTextMedicationName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Medication Name"
+            android:inputType="textCapWords"
+            android:drawableStart="@drawable/ic_medication_name"
+            android:drawablePadding="12dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:background="@drawable/rounded_edittext"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Medication Type Spinner -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Medication Type:"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp"/>
+        <Spinner
+            android:id="@+id/spinnerMedicationType"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:entries="@array/medication_types"
+            android:background="@drawable/rounded_edittext"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Dosage Quantity & Unit -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dosage:"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <Spinner
+                android:id="@+id/spinnerDosageUnit"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:entries="@array/dosage_units"
+                android:background="@drawable/rounded_edittext"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:layout_marginEnd="8dp"/>
+
+            <EditText
+                android:id="@+id/editTextDosageQuantity"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="2"
+                android:hint="Quantity (e.g., 500)"
+                android:inputType="numberDecimal"
+                android:background="@drawable/rounded_edittext"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp" />
+        </LinearLayout>
+
+        <!-- Frequency Spinner -->
+        <Spinner
+            android:id="@+id/spinnerFrequency"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:entries="@array/frequency"
+            android:drawableStart="@drawable/ic_frequency"
+            android:drawablePadding="12dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:background="@drawable/rounded_edittext"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Instructions -->
+        <EditText
+            android:id="@+id/editTextInstructions"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:hint="Instructions (Optional, e.g., With food, Before bed)"
+            android:inputType="textMultiLine"
+            android:gravity="top"
+            android:drawableStart="@drawable/ic_instructions"
+            android:drawablePadding="12dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:background="@drawable/rounded_edittext"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Start Date -->
+        <EditText
+            android:id="@+id/editTextStartDate"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Start Date"
+            android:focusable="false"
+            android:clickable="true"
+            android:inputType="none"
+            android:drawableStart="@drawable/ic_calendar"
+            android:drawablePadding="12dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:background="@drawable/rounded_edittext"
+            android:layout_marginBottom="16dp" />
+
+        <!-- End Date -->
+        <EditText
+            android:id="@+id/editTextEndDate"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="End Date (Optional)"
+            android:focusable="false"
+            android:clickable="true"
+            android:inputType="none"
+            android:drawableStart="@drawable/ic_calendar"
+            android:drawablePadding="12dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:background="@drawable/rounded_edittext"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Alarm Times Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Alarm Times:"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"/>
+
+        <Button
+            android:id="@+id/buttonAddAlarmTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Alarm Time"
+            android:backgroundTint="@color/primary"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="12dp"/>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutAlarmTimesContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="4dp"
+            android:background="@drawable/rounded_edittext_no_border"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/noAlarmTimesText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No alarm times added yet. Tap 'Add Alarm Time' to set one."
+                android:textColor="@color/text_color_secondary"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:padding="16dp"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+        <!-- SwitchCompat for Is Active -->
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchIsActive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Medication is Active"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="24dp"
+            tools:ignore="RtlSymmetry" />
+
+        <!-- NEW: Stop Medication Button -->
+        <Button
+            android:id="@+id/buttonStopMedication"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Stop Medication"
+            android:backgroundTint="@color/quantum_tealA100"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <!-- Save Button -->
+        <Button
+            android:id="@+id/buttonSaveMedication"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Save Medication"
+            android:backgroundTint="@color/primary"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Optional Delete Button -->
+        <!-- Uncomment and configure if you want a delete button -->
+        <!-- <Button
+            android:id="@+id/buttonDeleteMedication"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Delete Medication"
+            android:backgroundTint="@color/red_700"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:layout_marginBottom="24dp"
+            android:visibility="gone"
+            tools:visibility="visible" /> -->
+
+    </LinearLayout>
+</ScrollView>

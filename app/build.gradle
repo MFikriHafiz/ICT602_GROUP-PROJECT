@@ -1,0 +1,135 @@
+// app/build.gradle
+
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.google.gms.google.services)
+}
+
+apply plugin: 'com.google.gms.google-services' // Keep this here
+
+android {
+    namespace 'com.example.medialert'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.example.medialert"
+        minSdk 24
+        targetSdk 35
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    viewBinding {
+        enabled = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        // Sticking to Java 8 for broader compatibility and to avoid potential subtle issues.
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation libs.appcompat
+    implementation libs.activity
+    implementation libs.credentials
+    implementation libs.credentials.play.services.auth
+    implementation libs.googleid
+    implementation libs.core.splashscreen
+
+    // Firebase platform dependency (recommended for consistency and version management)
+    implementation(platform("com.google.firebase:firebase-bom:32.8.0"))
+
+    // Firebase Core services (versions managed by BOM)
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-database'
+    implementation 'com.google.firebase:firebase-storage'
+    implementation 'com.google.firebase:firebase-firestore'
+
+    // Google Play Services (Maps and Location) - Using the latest versions available
+    implementation 'com.google.android.gms:play-services-maps:18.2.0'
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+    implementation 'com.google.android.material:material:1.12.0'
+
+    // WorkManager
+    implementation "androidx.work:work-runtime-ktx:2.9.0"
+
+    // For WorkManager (version might vary, check latest)
+    implementation "androidx.work:work-runtime:2.9.0" // Or newer stable version
+
+    // Material Design Components - Use the latest stable version and declare only ONCE
+    implementation 'com.google.android.material:material:1.12.0'
+
+    // Navigation Component - Using the latest stable versions
+    implementation 'androidx.navigation:navigation-fragment:2.7.7'
+    implementation 'androidx.navigation:navigation-ui:2.7.7'
+
+    // Guava (Explicitly added for ListenableFuture compatibility)
+    implementation 'com.google.guava:guava:32.0.1-android'
+
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+
+    // Glide for image loading
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
+
+    // Google Places SDK
+    implementation 'com.google.android.libraries.places:places:3.4.0'
+
+    // Kotlin Coroutines (for async operations, if you use Kotlin or for lifecycle-aware components)
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.8.2'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.2'
+
+    // ConstraintLayout - Single, clean declaration using the correct stable version
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.1' // Check for the latest stable version
+
+
+    // CircleImageView
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    // Material Design (for CardView, TextInputLayout, Chips, MaterialSwitch, Buttons, Toolbar, FloatingActionButton)
+    implementation 'com.google.android.material:material:1.12.0' // Use your latest stable version
+
+    // ConstraintLayout
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // Navigation Component
+    implementation 'androidx.navigation:navigation-fragment:2.7.7'
+    implementation 'androidx.navigation:navigation-ui:2.7.7'
+
+    // Firebase Authentication
+    implementation 'com.google.firebase:firebase-auth'
+    // Ensure you have the Firebase BOM for consistent versions
+    implementation platform('com.google.firebase:firebase-bom:33.0.0') // Use latest stable version
+
+    // Firebase Firestore
+    implementation 'com.google.firebase:firebase-firestore'
+
+    // CircleImageView (for profile pictures)
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    // Glide (for loading profile pictures from URIs)
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
+
+    // Lifecycle components (for ViewModel and LiveData)
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.8.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.0'
+
+    // Activity KTX (for ActivityResultLaunchers)
+    implementation 'androidx.activity:activity-ktx:1.9.0'
+    implementation 'androidx.fragment:fragment-ktx:1.7.1' // Often pulled in by other KTX libs, but good to ensure
+
+    // Recyclerview
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MediAlert</string>
+    <string-array name="medication_types">
+        <item>Pill</item>
+        <item>Capsule</item>
+        <item>Tablet</item>
+        <item>Syrup</item>
+        <item>Inhaler</item>
+        <item>Injection</item>
+        <item>Cream</item>
+        <item>Drops</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="dosage_units">
+        <item>mg</item>
+        <item>mcg</item>
+        <item>g</item>
+        <item>ml</item>
+        <item>unit(s)</item>
+        <item>drop(s)</item>
+        <item>puff(s)</item>
+        <item>patch(es)</item>
+        <item>tablet(s)</item>
+        <item>capsule(s)</item>
+        <item>spoon(s)</item>
+    </string-array>
+
+    <string-array name="frequency">
+        <item>1x Times A Day</item>
+        <item>2x Times A Day</item>
+        <item>3x Times A Day</item>
+        <item>4x Times A Day</item>
+        <item>5x Times A Day</item>
+        <item>6x Times A Day</item>
+
+    </string-array>
+    <string name="Maps_api_key">AIzaSyDr64tr-Y3YopYDi7PmbUou96Q0o3wSYlI</string>
+</resources>

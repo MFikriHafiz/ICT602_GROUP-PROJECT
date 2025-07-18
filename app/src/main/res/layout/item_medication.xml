@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="12dp"
+    android:layout_marginVertical="6dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    app:strokeColor="@color/teal200"
+    app:strokeWidth="0.5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Medication Image with proper spacing -->
+        <ImageView
+            android:id="@+id/medication_image_view"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_medication_placeholder"
+            android:contentDescription="Medication image"
+            android:background="@drawable/rounded_image_background"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <!-- Medication Name -->
+        <TextView
+            android:id="@+id/medication_name_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:ellipsize="end"
+            android:maxLines="1"
+            app:layout_constraintStart_toEndOf="@id/medication_image_view"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/active_switch"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            tools:text="Paracetamol" />
+
+        <!-- Active Switch -->
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/active_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="8dp"
+            android:thumbTint="@color/teal500"
+            android:trackTint="@color/teal200"
+            tools:checked="true" />
+
+        <!-- Status Indicator -->
+        <TextView
+            android:id="@+id/status_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/bg_active_status"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="2dp"
+            app:layout_constraintEnd_toEndOf="@id/active_switch"
+            app:layout_constraintTop_toBottomOf="@id/active_switch"
+            app:layout_constraintBottom_toTopOf="@id/medication_type_text_view"
+            tools:text="Active" />
+
+        <!-- Medication Details -->
+        <TextView
+            android:id="@+id/medication_type_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#757575"
+            app:layout_constraintStart_toStartOf="@id/medication_name_text_view"
+            app:layout_constraintTop_toBottomOf="@id/medication_name_text_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="4dp"
+            tools:text="Pill" />
+
+        <TextView
+            android:id="@+id/medication_dosage_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#757575"
+            app:layout_constraintStart_toStartOf="@id/medication_name_text_view"
+            app:layout_constraintTop_toBottomOf="@id/medication_type_text_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="4dp"
+            tools:text="500 mg" />
+
+        <TextView
+            android:id="@+id/medication_frequency_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#757575"
+            app:layout_constraintStart_toStartOf="@id/medication_name_text_view"
+            app:layout_constraintTop_toBottomOf="@id/medication_dosage_text_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="4dp"
+            tools:text="Daily (8:00 AM, 6:00 PM)" />
+
+        <TextView
+            android:id="@+id/medication_date_range_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#757575"
+            app:layout_constraintStart_toStartOf="@id/medication_name_text_view"
+            app:layout_constraintTop_toBottomOf="@id/medication_frequency_text_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="4dp"
+            tools:text="01/01/2023 - Ongoing" />
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:id="@+id/action_buttons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/medication_date_range_text_view">
+
+            <ImageButton
+                android:id="@+id/edit_button"
+                style="@style/Widget.AppCompat.ImageButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="4dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_edit"
+                app:tint="@color/teal500" />
+
+            <ImageButton
+                android:id="@+id/delete_button"
+                style="@style/Widget.AppCompat.ImageButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_delete"
+                app:tint="@color/design_default_color_error" />
+        </LinearLayout>
+
+        <!-- Instructions -->
+        <TextView
+            android:id="@+id/medication_instructions_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="#757575"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/medication_name_text_view"
+            app:layout_constraintTop_toBottomOf="@id/action_buttons"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"
+            tools:text="Take with food after meals"
+            tools:visibility="visible"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

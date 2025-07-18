@@ -1,0 +1,44 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base Application Theme -->
+    <style name="Theme.MediAlert" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary -->
+        <item name="colorPrimary">@color/blue500</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/blue100</item>
+        <item name="colorOnPrimaryContainer">@color/blue900</item>
+
+        <!-- Secondary -->
+        <item name="colorSecondary">@color/teal500</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <!-- Surfaces -->
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/black</item>
+        <item name="colorSurfaceVariant">@color/gray200</item>
+        <item name="colorOnSurfaceVariant">@color/gray800</item>
+        <item name="colorSurfaceContainerLow">@color/gray100</item>
+
+        <!-- Text -->
+        <item name="textAppearanceTitleMedium">@style/TextAppearance.Material3.TitleMedium</item>
+        <item name="textAppearanceBodyMedium">@style/TextAppearance.Material3.BodyMedium</item>
+
+        <!-- Status bar -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
+    </style>
+
+    <!-- Optional: Specific section theme -->
+    <style name="Theme.MediAlert.EmergencyContacts" parent="Theme.MediAlert" />
+
+    <!-- Splash Screen Theme -->
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/logo</item>
+        <item name="windowSplashScreenAnimationDuration">1000</item>
+        <item name="postSplashScreenTheme">@style/Theme.MediAlert</item>
+    </style>
+
+    <style name="Theme.MediAlert.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.MediAlert.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>
